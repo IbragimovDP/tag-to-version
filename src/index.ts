@@ -51,7 +51,7 @@ async function getLastestTag(): Promise<string | undefined> {
 function formatSemanticValuesFromTag(tag: String) {
 
     if (tag.includes('v')) {
-        tag = tag.split('v')[1];
+        tag = tag.replace(/[^\d.]/g, '');
     }
 
     try {
