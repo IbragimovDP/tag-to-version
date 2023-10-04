@@ -50,9 +50,7 @@ async function getLastestTag(): Promise<string | undefined> {
 
 function formatSemanticValuesFromTag(tag: String) {
 
-    if (tag.includes('v')) {
-        tag = tag.replace(/[^\d.]/g, '');
-    }
+    tag = tag.replace(/[^\d.+]/g, '');
 
     try {
         // Load the YAML
